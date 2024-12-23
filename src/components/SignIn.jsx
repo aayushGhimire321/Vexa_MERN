@@ -1,5 +1,4 @@
 import {
-    Block,
     CloseRounded,
     EmailRounded,
     Visibility,
@@ -21,11 +20,11 @@ import {
   import axios from "axios";
   
   const Container = styled.div`
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     background-color: #000000a7;
     display: flex;
     align-items: center;
@@ -33,7 +32,7 @@ import {
   `;
   
   const Wrapper = styled.div`
-    width: 360px;
+    inline-size: 360px;
     border-radius: 30px;
     background-color: ${({ theme }) => theme.bgLighter};
     color: ${({ theme }) => theme.text};
@@ -50,7 +49,7 @@ import {
     margin: 16px 28px;
   `;
   const OutlinedBox = styled.div`
-    height: 44px;
+    block-size: 44px;
     border-radius: 12px;
     border: 1px solid ${({ theme }) => theme.soft2};
     color: ${({ theme }) => theme.soft2};
@@ -82,7 +81,7 @@ import {
     padding: 0px 14px;
   `;
   const GoogleIcon = styled.img`
-    width: 22px;
+    inline-size: 22px;
   `;
   const Divider = styled.div`
     display: flex;
@@ -94,15 +93,15 @@ import {
     font-weight: 600;
   `;
   const Line = styled.div`
-    width: 80px;
-    height: 1px;
+    inline-size: 80px;
+    block-size: 1px;
     border-radius: 10px;
     margin: 0px 10px;
     background-color: ${({ theme }) => theme.soft};
   `;
   
   const TextInput = styled.input`
-    width: 100%;
+    inline-size: 100%;
     border: none;
     font-size: 14px;
     border-radius: 3px;
@@ -141,7 +140,7 @@ import {
     margin: 8px 26px;
     display: block;
     cursor: pointer;
-    text-align: right;
+    text-align: end;
     &:hover {
       color: ${({ theme }) => theme.primary};
     }
@@ -178,7 +177,7 @@ import {
       } else {
         setDisabled(true);
       }
-    }, [email, password]);
+    }, [email, password, validateEmail]);
   
     const handleLogin = async (e) => {
       e.preventDefault();
@@ -242,6 +241,7 @@ import {
     const [emailError, setEmailError] = useState("");
     const [credentialError, setcredentialError] = useState("");
   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const validateEmail = () => {
       if (validator.isEmail(email)) {
         setEmailError("");
@@ -252,6 +252,7 @@ import {
   
   
     //validate password
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const validatePassword = () => {
       if (newpassword.length < 8) {
         setSamepassword("Password must be atleast 8 characters long!");
@@ -288,7 +289,7 @@ import {
         setSamepassword("Passwords do not match!");
         setResetDisabled(true);
       }
-    }, [newpassword, confirmedpassword]);
+    }, [newpassword, confirmedpassword, validatePassword, passwordCorrect]);
   
     const sendOtp = () => {
       if (!resetDisabled) {
@@ -425,7 +426,7 @@ import {
               <CloseRounded
                 style={{
                   position: "absolute",
-                  top: "24px",
+                  insetBlockStart: "24px",
                   right: "30px",
                   cursor: "pointer",
                 }}
@@ -491,7 +492,7 @@ import {
                 <OutlinedBox
                   button={true}
                   activeButton={!disabled}
-                  style={{ marginTop: "6px" }}
+                  style={{ insetBlockStart: "6px" }}
                   onClick={handleLogin}
                 >
                   {Loading ? (
@@ -510,7 +511,7 @@ import {
                   }}
                   style={{
                     fontWeight: "500",
-                    marginLeft: "6px",
+                    insetInlineStart: "6px",
                     cursor: "pointer",
                   }}
                 >

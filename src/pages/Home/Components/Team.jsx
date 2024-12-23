@@ -15,8 +15,8 @@ const Title = styled.div`
   font-size: 52px;
   font-weight: 800;
   text-align: center;
-  @media (max-width: 768px) {
-      margin-top: 12px;
+  @media (max-inline-size: 768px) {
+      margin-block-start: 12px;
       font-size: 36px;
   }
   color: ${({ theme }) => theme.text};
@@ -26,15 +26,15 @@ const Description = styled.p`
 font-size: 20px;
 line-height: 1.5;
 font-weight:600px;
-width: 100%;
-max-width: 700px;
+inline-size: 100%;
+max-inline-size: 700px;
 text-align: center;
 color: hsl(246,  6%, 65%);
-margin-bottom: 80px;
+margin-block-end: 80px;
 @media (max-width: 768px) {
-  width: 90%;
+  inline-size: 90%;
     font-size: 16px;
-    margin-bottom: 60px;
+    margin-block-end: 60px;
 }
 `;
 
@@ -43,10 +43,10 @@ const TeamContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  inline-size: 100%;
   gap: 20px;
-  max-width: 1200px;
-  @media (max-width: 768px) {
+  max-inline-size: 1200px;
+  @media (max-inline-size: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -55,7 +55,7 @@ const TeamContainer = styled.div`
 const Team = () => {
   const member = [{
     photo: "https://avatars.githubusercontent.com/u/64485885?v=4",
-    name: "Rishav Chanda",
+    name: "Aayush Ghimire",
     title: "Full-Stack Developer",
     bio: "I have expertise in full-stack web development, Android app development, and MERN stack development. I am knowledgeable in various programming languages, frameworks, and technologies and strive to create high-quality, user-friendly applications."
   }]

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import ForumIcon from '@mui/icons-material/Forum';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import HeroBgAnimation from '../components/HeroBgAnimation'
 import Diversity3Icon from '@mui/icons-material/Diversity3';
-import HeroBgAnimation from './HeroBgAnimation';
 
 const FeaturesWrapper = styled.section`
   display: flex;

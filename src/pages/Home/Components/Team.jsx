@@ -15,8 +15,8 @@ const Title = styled.div`
   font-size: 52px;
   font-weight: 800;
   text-align: center;
-  @media (max-inline-size: 768px) {
-      margin-block-start: 12px;
+  @media (max-width: 768px) {
+      margin-top: 12px;
       font-size: 36px;
   }
   color: ${({ theme }) => theme.text};
@@ -26,15 +26,15 @@ const Description = styled.p`
 font-size: 20px;
 line-height: 1.5;
 font-weight:600px;
-inline-size: 100%;
-max-inline-size: 700px;
+width: 100%;
+max-width: 700px;
 text-align: center;
 color: hsl(246,  6%, 65%);
-margin-block-end: 80px;
+margin-bottom: 80px;
 @media (max-width: 768px) {
-  inline-size: 90%;
+  width: 90%;
     font-size: 16px;
-    margin-block-end: 60px;
+    margin-bottom: 60px;
 }
 `;
 
@@ -43,10 +43,10 @@ const TeamContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  inline-size: 100%;
+  width: 100%;
   gap: 20px;
-  max-inline-size: 1200px;
-  @media (max-inline-size: 768px) {
+  max-width: 1200px;
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -54,7 +54,7 @@ const TeamContainer = styled.div`
 
 const Team = () => {
   const member = [{
-    photo: "https://avatars.githubusercontent.com/u/64485885?v=4",
+    photo: "https://avatars.githubusercontent.com/u/156908392?v=4",
     name: "Aayush Ghimire",
     title: "Full-Stack Developer",
     bio: "I have expertise in full-stack web development, Android app development, and MERN stack development. I am knowledgeable in various programming languages, frameworks, and technologies and strive to create high-quality, user-friendly applications."
